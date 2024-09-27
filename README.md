@@ -1,6 +1,6 @@
-# ExporterJS
+# Exporter
 
-ExporterJS is a Next.js application designed to easily export metrics and provide a user-friendly UI for data visualization and management.
+Exporter is a Next.js application designed to easily export metrics and provide a user-friendly UI for data visualization and management.
 
 ## Table of Contents
 - [Features](#features)
@@ -17,6 +17,13 @@ ExporterJS is a Next.js application designed to easily export metrics and provid
 - User-friendly dashboard for data visualization
 - Customizable export options
 - Real-time data updates
+
+# Exporters
+
+- Static Exporter (Controlled by API)
+- Dynamic Exporter (Pattern)
+- Kafka Exporter (Count of hot messages in topics)
+- Elastic Exporter (Search keyword between date range)
 
 ## Requirements
 
@@ -54,7 +61,7 @@ ExporterJS is a Next.js application designed to easily export metrics and provid
 
 ## How to Contribute
 
-We welcome contributions to the ExporterJS project! Here are some areas where we need help:
+We welcome contributions to the Exporter project! Here are some areas where we need help:
 
 1. Frontend Development: Improving the dashboard UI and user experience
 2. Backend Development: Implementing efficient data processing and export functions
@@ -66,4 +73,4 @@ Please read our [Contribution Guidelines](CONTRIBUTING.md) for more details.
 
 ---
 
-For more information or to report issues, please [open an issue](https://github.com/titainper/exporterjs/issues) on our GitHub repository.
+For more information or to report issues, please [open an issue](https://github.com/titainper/exporter/issues) on our GitHub repository.

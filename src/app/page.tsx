@@ -8,7 +8,7 @@ export default async function Home() {
 
     return (
         <main>
-            <h1>Configs</h1>
+            <h1>Configs2</h1>
             <ul>
                 {configs.map(config => (
                     <li key={config.id}>{config.name}</li>

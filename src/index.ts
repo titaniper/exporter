@@ -1,19 +1,17 @@
-import "reflect-metadata"
 import { DataSource } from "typeorm"
 import { Config } from "./services/configs/domain/model";
+import "reflect-metadata"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "localhost",
-    port: 3309,
-    username: "root",
-    password: "1234",
-    database: "chaos",
-    synchronize: true,
+    host: process.env.DB_HOST || "localhost",
+    port: parseInt(process.env.DB_PORT || "3306"),
+    username: process.env.DB_USERNAME || "root",
+    password: process.env.DB_PASSWORD || "",
+    database: process.env.DB_DATABASE || "exporter",
+    synchronize: process.env.DB_SYNCHRONIZE === "true",
     logging: true,
     entities: [Config],
-    // migrations: ["src/migration/**/*.ts"],
-    // subscribers: ["src/subscriber/**/*.ts"],
 })
 
 export async function initializeDataSource() {
