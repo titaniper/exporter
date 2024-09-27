@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exporter-deployment
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: good-exporter
+  template:
+    metadata:
+      labels:
+        app: good-exporter
+    spec:
+      containers:
+      - name: good-exporter
+        image: devjyk/exporter:latest  # 여기에 실제 이미지 이름과 태그를 입력하세요
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: exporter-config
+        - secretRef:
+            name: exporter-secrets
