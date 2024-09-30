@@ -1,0 +1,20 @@
+# https://observability.thomasriley.co.uk/prometheus/configuring-prometheus/using-service-monitors/
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: exporter-service-monitor
+  namespace: monitoring
+  labels:
+    release: prometheus 
+    app.kubernetes.io/managed-by: terraform
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: exporter-service
+      app.kubernetes.io/component : exporter
+      # 서비스 이름 
+      # app: good-exporter  # Deployment와 Service의 selector와 일치하도록 변경
+  endpoints:
+  - port: exporter-name
+    path: /api/metrics
+    interval: 15s

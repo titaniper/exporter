@@ -3,11 +3,17 @@ kind: Service
 metadata:
   name: exporter-service
   namespace: monitoring
+  labels:
+    app.kubernetes.io/name: exporter-service
+    app.kubernetes.io/component: exporter
 spec:
   selector:
+    # deployment
     app: good-exporter
   ports:
     - protocol: TCP
       port: 80
       targetPort: 3000
+      # port 이름
+      name: exporter-name 
   type: ClusterIP 
