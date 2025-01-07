@@ -50,6 +50,8 @@ Exporter is a Next.js application designed to easily export metrics and provide 
 - [ ] Metric export functionality
 - [ ] Dashboard UI
 - [ ] API endpoints for metric access
+- UI 통해 exporter 추가, (kafka-connect, kafka, es) 등 데이터 소스 혹은 타입 선택 후 설정하면 자동으로 메트릭 가공 후 exporter
+
 
 ## To-Do List
 
