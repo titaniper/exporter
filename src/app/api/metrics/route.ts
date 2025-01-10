@@ -1,10 +1,12 @@
 import { MetricService } from '@/services/metrics/application/service';
 import { NextResponse } from 'next/server'
 import Container from 'typedi';
+import 'reflect-metadata';
 
-export async function POST() {
+export async function POST(request: Request) {
+    const requestBody = await request.json();
     const metricService = Container.get(MetricService); 
-    metricService.set(100);
+    metricService.set(requestBody.value);
     return NextResponse.json({}, { status: 201 })
 }
 
